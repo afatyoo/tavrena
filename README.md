@@ -49,6 +49,33 @@ Tavrena menyatukan semua keluhan dalam satu sistem tiket dengan status, tingkat 
 | Database | MySQL 8 |
 | Container | Docker + Docker Compose |
 
+### Arsitektur Stack
+
+```mermaid
+flowchart LR
+    U["Pengguna<br/>(Desktop / Mobile)"] --> B
+
+    subgraph B["Browser (Frontend)"]
+        H["HTML5"] --- C["CSS3 + Bootstrap 5"]
+        H --- J["JavaScript"]
+        J --> A["AJAX (fetch API)"]
+    end
+
+    subgraph D["Docker Compose"]
+        subgraph APP["Container app :8000"]
+            F["Python 3 + Flask<br/>REST API /api/*"]
+        end
+        subgraph DB["Container db :3306"]
+            M[("MySQL 8<br/>users, tickets, messages")]
+        end
+    end
+
+    A -- "Request JSON" --> F
+    F -- "Response JSON" --> A
+    F -- "SQL" --> M
+    F -. "Email konfirmasi" .-> E["SMTP"]
+```
+
 Referensi desain: dashboard bergaya glassmorphism dengan sidebar menu, kartu ringkasan, dan grafik donut/batang; halaman login split panel dengan aksen biru.
 
 ## Penerapan Logika dan Algoritma
