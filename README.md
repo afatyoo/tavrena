@@ -47,6 +47,7 @@ Tavrena menyatukan semua keluhan dalam satu sistem tiket dengan status, tingkat 
 | Format data | JSON |
 | Backend | Python 3 + Flask (REST API sederhana) |
 | Database | MySQL 8 |
+| Container | Docker + Docker Compose |
 
 Referensi desain: dashboard bergaya glassmorphism dengan sidebar menu, kartu ringkasan, dan grafik donut/batang; halaman login split panel dengan aksen biru.
 
@@ -99,6 +100,9 @@ tavrena/
 │   └── js/ (api.js, validator.js, render.js, app.js)
 ├── app.py                # server Flask, endpoint /api/*, keluaran JSON
 ├── requirements.txt
+├── Dockerfile            # image backend Flask
+├── docker-compose.yml    # service app + db (MySQL)
+├── .env.example          # variabel DB, SMTP, secret
 ├── database/schema.sql
 └── docs/                 # dokumen, flowchart, desain UI
 ```
@@ -138,10 +142,22 @@ Rincian task ada di GitHub Project **Tavrena Roadmap**.
 ```bash
 git clone https://github.com/afatyoo/tavrena.git
 cd tavrena
-mysql -u root -p < database/schema.sql
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-flask --app app run --port 8000
+cp .env.example .env
+docker compose up -d --build
+```
+
+Service yang jalan:
+
+| Service | Isi | Port |
+|---|---|---|
+| `app` | Flask (API + file HTML statis) | 8000 |
+| `db` | MySQL 8, `database/schema.sql` otomatis di-import saat pertama jalan | 3306 |
+
+Perintah berguna:
+
+```bash
+docker compose logs -f app   # lihat log backend
+docker compose down          # hentikan semua service
 ```
 
 Buka `http://localhost:8000`.
