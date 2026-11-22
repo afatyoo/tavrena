@@ -45,7 +45,7 @@ Tavrena menyatukan semua keluhan dalam satu sistem tiket dengan status, tingkat 
 | Interaksi | JavaScript (vanilla) |
 | Komunikasi data | AJAX (`fetch` API) |
 | Format data | JSON |
-| Backend | PHP 8 (REST API sederhana) |
+| Backend | Python 3 + Flask (REST API sederhana) |
 | Database | MySQL 8 |
 
 Referensi desain: dashboard bergaya glassmorphism dengan sidebar menu, kartu ringkasan, dan grafik donut/batang; halaman login split panel dengan aksen biru.
@@ -67,7 +67,7 @@ Referensi desain: dashboard bergaya glassmorphism dengan sidebar menu, kartu rin
 // Ambil daftar tiket dengan filter, tanpa reload halaman
 async function loadTickets(filter) {
   const params = new URLSearchParams(filter);
-  const res = await fetch(`api/tickets.php?${params}`);
+  const res = await fetch(`/api/tickets?${params}`);
   const data = await res.json();
   renderTickets(data.tickets);
 }
@@ -97,7 +97,8 @@ tavrena/
 ├── assets/
 │   ├── css/style.css
 │   └── js/ (api.js, validator.js, render.js, app.js)
-├── api/                  # endpoint PHP, keluaran JSON
+├── app.py                # server Flask, endpoint /api/*, keluaran JSON
+├── requirements.txt
 ├── database/schema.sql
 └── docs/                 # dokumen, flowchart, desain UI
 ```
@@ -109,7 +110,7 @@ tavrena/
 | Project Manager | Muhammad Afatyo Ikhsan | Jadwal, koordinasi tim, review, dokumen deskripsi proyek |
 | UI/UX Designer | Devani Arlenia | Wireframe, mockup desktop dan mobile, design system |
 | Frontend Developer | Iman Abadi | HTML, CSS, Bootstrap, JavaScript, integrasi AJAX |
-| Backend Developer | Zalfa Aisyah Putri | Database, REST API PHP, auth, konfirmasi email |
+| Backend Developer | Zalfa Aisyah Putri | Database, REST API Python (Flask), auth, konfirmasi email |
 | System Analyst | Said Anwari | Analisis kebutuhan, flowchart, ERD, dokumentasi AJAX/JSON, pengujian |
 
 ## Timeline (1 Bulan)
@@ -138,7 +139,9 @@ Rincian task ada di GitHub Project **Tavrena Roadmap**.
 git clone https://github.com/afatyoo/tavrena.git
 cd tavrena
 mysql -u root -p < database/schema.sql
-php -S localhost:8000
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+flask --app app run --port 8000
 ```
 
 Buka `http://localhost:8000`.
