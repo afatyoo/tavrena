@@ -1,0 +1,9 @@
+/* Tavrena design tokens (sesuaikan dengan mockup UI/UX) */
+:root {
+  --tv-primary: #6c4cf5;
+  --tv-bg: #f4f5fb;
+  --tv-high: #e5484d;
+  --tv-medium: #f59e0b;
+  --tv-low: #22c55e;
+}
+body { background: var(--tv-bg); }
