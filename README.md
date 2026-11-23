@@ -1,4 +1,10 @@
-# Tavrena
+<p align="center">
+  <img src="mockup/assets/logo-mark.svg" alt="Logo Tavrena" width="96">
+</p>
+
+<h1 align="center">Tavrena</h1>
+
+<p align="center">Helpdesk ticketing berbasis web · <a href="https://tavrena.afatyo.web.id">Lihat mockup</a></p>
 
 **Tavrena** adalah aplikasi helpdesk ticketing berbasis web. Pengguna bisa membuat tiket keluhan, agent menangani tiket sesuai level akses, dan semua percakapan tersimpan sebagai riwayat pesan. Tampilan dibuat responsif untuk desktop dan mobile.
 
