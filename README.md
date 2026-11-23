@@ -82,7 +82,43 @@ flowchart LR
     F -. "Email konfirmasi" .-> E["SMTP"]
 ```
 
-Referensi desain: dashboard bergaya glassmorphism dengan sidebar menu, kartu ringkasan, dan grafik donut/batang; halaman login split panel dengan aksen biru.
+
+## Desain
+
+Mockup statis bisa dibuka di **https://tavrena.afatyo.web.id** (source di folder [`mockup/`](mockup/)).
+
+| Halaman | Isi |
+|---|---|
+| [Login](https://tavrena.afatyo.web.id/login.html) | Masuk, validasi form, daftar akun dengan konfirmasi link email |
+| [User](https://tavrena.afatyo.web.id/user.html) | Daftar tiket per status, buat tiket, riwayat pesan |
+| [Agent](https://tavrena.afatyo.web.id/staff.html) | Antrean urut prioritas, balas pesan, ubah status |
+| [Manager](https://tavrena.afatyo.web.id/manager.html) | Ringkasan severity, beban per agent, assign, cari dan filter tiket |
+| [Super Admin](https://tavrena.afatyo.web.id/admin.html) | Kelola user, role, dan permission |
+
+### Palet warna
+
+Semua warna dipakai solid, tanpa gradasi.
+
+| Warna | Kode | Dipakai untuk |
+|---|---|---|
+| Blanche White | `#FEFFFC` | Latar halaman, sidebar, kartu |
+| Ink | `#0A0A0D` | Teks, garis tepi, bayangan |
+| Plum Violet | `#8116E0` | Kotak ringkasan, status Open, bubble chat agent, link |
+| Banana Yellow | `#D0FF00` | Menu aktif, tombol utama, status Complete, severity Low |
+
+Warna severity: High `#E5213F`, Medium `#FFB020`, Low `#D0FF00`.
+
+### Tipografi dan gaya
+
+- **Bricolage Grotesque** untuk judul, angka, dan teks utama.
+- **IBM Plex Mono** untuk nomor tiket, label, waktu, dan badge.
+- Gaya brutalist bertema tiket: sudut tegas, garis tepi 1.5px, bayangan solid tanpa blur, kartu tiket bertakik, dan garis putus-putus seperti perforasi karcis.
+
+### Logo
+
+<img src="mockup/assets/logo-mark.svg" alt="Logo Tavrena" width="64">
+
+Logo **Tiles**: empat ubin tiket, satu bergeser keluar sebagai tiket yang sedang ditangani. File ada di [`mockup/assets/`](mockup/assets/): `logo-mark.svg` untuk latar terang, `logo-mark-white.svg` untuk latar gelap atau violet, `favicon.svg`. Referensi logo lain ada di [`mockup/logo-referensi/`](https://tavrena.afatyo.web.id/logo-referensi/preview.html).
 
 ## Penerapan Logika dan Algoritma
 
@@ -131,6 +167,7 @@ tavrena/
 ├── assets/
 │   ├── css/style.css
 │   └── js/ (api.js, validator.js, render.js, app.js)
+├── mockup/               # mockup statis (HTML, CSS, JS, data dummy, logo)
 ├── app.py                # server Flask, endpoint /api/*, keluaran JSON
 ├── requirements.txt
 ├── Dockerfile            # image backend Flask
