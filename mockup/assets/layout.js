@@ -11,7 +11,7 @@ function buildLayout() {
   const role = document.body.dataset.role, m = MENUS[role];
   const nav = m.items.map((it, i) => `<a class="nav-link ${i === 0 ? "active" : ""}" href="#"><i class="bi ${it[0]}"></i>${it[1]}</a>`).join("");
   document.getElementById("sidebar").innerHTML = `
-    <a class="brand" href="index.html"><img src="assets/logo-mark.svg" alt="">tavrena<b>.</b></a>
+    <a class="brand" href="index.html"><img src="assets/logo-mark-animated.svg" alt=""><span class="brand-word">tavrena</span></a>
     <div class="menu-label">MENU ${m.label.toUpperCase()}</div>
     <nav class="nav flex-column gap-1">${nav}</nav>
     <div class="menu-label">LAINNYA</div>

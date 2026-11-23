@@ -29,7 +29,7 @@ h6.fw-bold,.fw-bold.mb-0{font-weight:800!important;letter-spacing:-.02em}
 h6{font-size:1.05rem}
 
 /* ---------- brand ---------- */
-.brand{display:inline-flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:1.05rem;letter-spacing:.32em;text-transform:uppercase;color:var(--paper);text-decoration:none}
+.brand{display:inline-flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:1.05rem;letter-spacing:.32em;text-transform:uppercase;color:var(--violet);text-decoration:none}
 .brand img{width:34px;height:34px}
 .brand b,.brand small{display:none}
 
@@ -153,3 +153,7 @@ table.table-sm i.bi{font-size:1rem}
   .bottom-nav a.active{color:var(--dark);background:var(--lime)}
   .bottom-nav i{font-size:1.15rem;display:block}
 }
+
+/* ---------- logo animation: tulisan muncul setelah ubin tersusun ---------- */
+.brand-word{display:inline-block;animation:brandWord .5s ease-out 1.2s both}
+@keyframes brandWord{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
