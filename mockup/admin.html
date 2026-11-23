@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" data-bs-theme="dark">
+<html lang="id" data-bs-theme="light">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tavrena | Super Admin</title>
@@ -57,10 +57,10 @@
 <script src="assets/layout.js"></script>
 <script>
 const USERS=[["Afatyo","afatyo@tavrena.id","Super Admin",1],["Rina Putri","rina@tavrena.id","Manager",1],["Iman Abadi","iman@tavrena.id","Agent",1],["Bagas Pratama","bagas@tavrena.id","Agent",1],["Sinta Dewi","sinta@tavrena.id","Agent",0],["Andi Wijaya","andi@mail.com","User",1],["Maya Sari","maya@mail.com","User",0]];
-const RC={"Super Admin":"#D0FF00","Manager":"#A855F7","Agent":"#FFB020","User":"#9a99a8"};
+const RC={"Super Admin":"#8116E0","Manager":"#0A0A0D","Agent":"#C77800","User":"#6B6A76"};
 function draw(){
   const q=s.value.toLowerCase();
-  tb.innerHTML=USERS.filter(u=>(!fr.value||u[2]===fr.value)&&(u[0]+u[1]).toLowerCase().includes(q)).map(u=>`<tr><td><div class="d-flex align-items-center gap-2"><span class="avatar" style="background:${RC[u[2]]};color:#0A0A0D">${initials(u[0])}</span><div><div class="fw-semibold">${u[0]}</div><div class="small text-muted">${u[1]}</div></div></div></td>
+  tb.innerHTML=USERS.filter(u=>(!fr.value||u[2]===fr.value)&&(u[0]+u[1]).toLowerCase().includes(q)).map(u=>`<tr><td><div class="d-flex align-items-center gap-2"><span class="avatar" style="background:${RC[u[2]]};color:#FEFFFC">${initials(u[0])}</span><div><div class="fw-semibold">${u[0]}</div><div class="small text-muted">${u[1]}</div></div></div></td>
   <td><span class="role-chip" style="color:${RC[u[2]]};background:${RC[u[2]]}1f">${u[2]}</span></td>
   <td>${u[3]?'<span class="st st-Complete">Terverifikasi</span>':'<span class="st st-Pending">Menunggu link</span>'}</td>
   <td class="text-end"><button class="btn btn-sm btn-light"><i class="bi bi-pencil"></i></button> <button class="btn btn-sm btn-light text-danger"><i class="bi bi-trash"></i></button></td></tr>`).join("")||'<tr><td colspan="4" class="text-center text-muted py-4">Tidak ada user</td></tr>';

@@ -1,8 +1,8 @@
 // DATA DUMMY untuk mockup (tidak terhubung ke backend)
 const AGENTS = [
   { id: 1, name: "Iman Abadi", color: "#8116E0" },
-  { id: 2, name: "Rina Putri", color: "#A855F7" },
-  { id: 3, name: "Bagas Pratama", color: "#f59e0b" },
+  { id: 2, name: "Rina Putri", color: "#0A0A0D" },
+  { id: 3, name: "Bagas Pratama", color: "#C77800" },
   { id: 4, name: "Sinta Dewi", color: "#7a9600" }
 ];
 const TICKETS = [
