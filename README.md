@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="mockup/assets/logo-mark.svg" alt="Logo Tavrena" width="96">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="mockup/assets/logo-mark-white.svg">
+    <img src="mockup/assets/logo-mark.svg" alt="Logo Tavrena" width="96">
+  </picture>
 </p>
 
 <h1 align="center">Tavrena</h1>
@@ -116,9 +119,12 @@ Warna severity: High `#E5213F`, Medium `#FFB020`, Low `#D0FF00`.
 
 ### Logo
 
-<img src="mockup/assets/logo-mark.svg" alt="Logo Tavrena" width="64">
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="mockup/assets/logo-mark-white.svg">
+    <img src="mockup/assets/logo-mark.svg" alt="Logo Tavrena" width="64">
+  </picture>
 
-Logo **Tiles**: empat ubin tiket, satu bergeser keluar sebagai tiket yang sedang ditangani. File ada di [`mockup/assets/`](mockup/assets/): `logo-mark.svg` untuk latar terang, `logo-mark-white.svg` untuk latar gelap atau violet, `favicon.svg`. Referensi logo lain ada di [`mockup/logo-referensi/`](https://tavrena.afatyo.web.id/logo-referensi/preview.html).
+Logo **Tiles**: empat ubin tiket, satu bergeser keluar sebagai tiket yang sedang ditangani. File ada di [`mockup/assets/`](mockup/assets/): `logo-mark.svg` untuk latar terang, `logo-mark-white.svg` untuk latar gelap atau violet, versi beranimasi `logo-mark-animated.svg` dan `logo-mark-white-animated.svg`, serta `favicon.svg`. Referensi logo lain ada di [`mockup/logo-referensi/`](https://tavrena.afatyo.web.id/logo-referensi/preview.html).
 
 ## Penerapan Logika dan Algoritma
 
