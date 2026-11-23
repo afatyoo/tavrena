@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Referensi Logo Tavrena</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;padding:32px 20px;background:#0A0A0D;color:#FEFFFC;font-family:"Plus Jakarta Sans",sans-serif}
+h2{margin:0 0 4px}.sub{color:#9a99a8;margin:0 0 24px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.c{border:1px solid rgba(255,255,255,.1);border-radius:22px;overflow:hidden;background:#111115}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr}
+.row>div{display:grid;place-items:center;padding:22px 0}
+.v1{background:#0A0A0D}.v2{background:#8116E0}.v3{background:#FEFFFC}
+.lock{display:flex;align-items:center;gap:12px;padding:20px 22px;border-top:1px solid rgba(255,255,255,.08);min-height:96px}
+.lock b{font-size:28px;font-weight:800;letter-spacing:-1px}.lock b i{color:#D0FF00;font-style:normal}
+.lk-stack{flex-direction:column;gap:6px}.lk-stack b{font-size:22px}
+.lk-caps b{font-size:20px;letter-spacing:4px;text-transform:uppercase}
+.lk-row-light{background:#FEFFFC;color:#0A0A0D}.lk-row-light b{font-weight:500;letter-spacing:-.5px}.lk-row-light b i{color:#8116E0}
+.lk-mono{background:#D0FF00;color:#0A0A0D}.lk-mono b{font-size:26px}.lk-mono b i{color:#8116E0}
+.lk-none{justify-content:center;background:#8116E0}
+.info{padding:0 22px 20px}.info h3{margin:0 0 4px;font-size:16px}.info p{margin:0;color:#9a99a8;font-size:14px}
+</style></head><body>
+<h2>Referensi Logo Tavrena</h2><p class="sub">Tiap logo ditampilkan di latar gelap, violet, dan terang, plus contoh lockup dengan tulisan.</p>
+<div class="g" id="g"></div>
+<script src="marks.js"></script>
+<script>
+const W="#FEFFFC",L="#D0FF00",V="#8116E0",K="#0A0A0D";
+function lockup(m){
+  if(m.lock==="none") return `<div class="lock lk-none">${markSVG(m,L,W,V,96)}</div>`;
+  if(m.lock==="row-light") return `<div class="lock lk-row-light">${markSVG(m,V,L,W,44)}<b>tavrena<i>.</i></b></div>`;
+  if(m.lock==="mono") return `<div class="lock lk-mono">${markSVG(m,K,V,L,44)}<b>tavrena<i>.</i></b></div>`;
+  if(m.lock==="caps") return `<div class="lock lk-caps">${markSVG(m,W,L,"#111115",40)}<b>Tavrena</b></div>`;
+  if(m.lock==="stack") return `<div class="lock lk-stack">${markSVG(m,L,V,"#111115",48)}<b>tavrena</b></div>`;
+  return `<div class="lock">${markSVG(m,V,L,"#111115",44)}<b>tavrena<i>.</i></b></div>`;
+}
+g.innerHTML=MARKS.map((m,i)=>`<div class="c">
+  <div class="row"><div class="v1">${markSVG(m,W,L,K,84)}</div><div class="v2">${markSVG(m,W,L,V,84)}</div><div class="v3">${markSVG(m,K,V,W,84)}</div></div>
+  ${lockup(m)}
+  <div class="info"><h3>${i+1}. ${m.name}</h3><p>${m.note}</p></div></div>`).join("");
+</script></body></html>

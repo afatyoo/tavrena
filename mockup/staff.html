@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tavrena | Antrean Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="assets/style.css" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-role="staff">
+<div class="app">
+  <aside class="sidebar glass" id="sidebar"></aside>
+  <main class="main">
+    <div class="mobile-top glass"><a class="brand" href="index.html" style="font-size:1.3rem"><img src="assets/logo-mark.svg" alt="">tavrena<b>.</b></a><span class="icon-btn"><i class="bi bi-bell"></i><span class="dot"></span></span></div>
+    <div class="topbar">
+      <div class="glass greet flex-grow-1" id="greet"></div>
+      <div class="glass d-none d-md-flex align-items-center gap-2"><i class="bi bi-search text-muted"></i><input class="border-0 bg-transparent" style="outline:none" placeholder="Cari tiket..."></div>
+      <div class="glass d-none d-lg-flex align-items-center gap-2"><span class="icon-btn"><i class="bi bi-bell"></i><span class="dot"></span></span><span class="icon-btn"><i class="bi bi-calendar3"></i></span></div>
+    </div>
+    <section class="glass overview">
+      <h6 class="fw-bold mb-0">Antrean Saya</h6><p class="text-muted small mb-3">Tiket yang di-assign ke kamu, urut berdasarkan prioritas</p>
+      <div class="row g-3"><div class="col-6 col-lg-3"><div class="glass stat"><div class="num">4 <small></small></div><div class="lbl">Tiket Ditangani</div></div></div><div class="col-6 col-lg-3"><div class="glass stat"><div class="num">2 <small>(1 High)</small></div><div class="lbl">Open</div></div></div><div class="col-6 col-lg-3"><div class="glass stat"><div class="num">1 <small></small></div><div class="lbl">Pending</div></div></div><div class="col-6 col-lg-3"><div class="glass stat"><div class="num">12 <small>minggu ini</small></div><div class="lbl">Diselesaikan</div></div></div></div>
+    </section>
+    <div class="row g-3">
+      <div class="col-xl-6">
+        <div class="glass p-3 h-100">
+          <div class="d-flex justify-content-between align-items-center mb-2"><h6 class="fw-bold mb-0">Antrean Prioritas</h6><span class="small text-muted"><i class="bi bi-sort-down"></i> High → Low</span></div>
+          <div class="table-responsive"><table class="table tv-table mb-0"><thead><tr><th>#</th><th>Tiket</th><th>Severity</th><th>Status</th></tr></thead><tbody id="q"></tbody></table></div>
+        </div>
+      </div>
+      <div class="col-xl-6">      <div class="glass p-3 p-lg-4">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
+          <div><div class="text-muted small">#1024 · dibuat 15 menit lalu oleh Andi Wijaya</div><h6 class="fw-bold mb-1">Tidak bisa login ke email kantor</h6>
+          <span class="sev sev-High">High</span> <span class="st st-Open ms-1">Open</span></div>
+          <div class="d-flex gap-2"><select class="form-select form-select-sm" style="width:auto"><option>Open</option><option>Pending</option><option>Complete</option></select><button class="btn btn-tv btn-sm px-3">Update</button></div>
+        </div>
+        <div class="chat mb-3" id="chat"></div>
+        <div class="d-flex gap-2"><input class="form-control" placeholder="Tulis balasan..."><button class="btn btn-tv px-3"><i class="bi bi-send"></i></button></div>
+      </div></div>
+    </div>
+  </main>
+</div>
+<nav class="bottom-nav glass" id="bottomnav"></nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/layout.js"></script>
+<script>
+const mine=sortByPriority(TICKETS.filter(t=>t.agent===1));
+q.innerHTML=mine.map(t=>`<tr><td class="text-muted small">${t.id}</td><td><div class="fw-semibold">${t.title}</div><div class="small text-muted">${t.user} · ${t.age} lalu</div></td><td>${sevBadge(t.severity)}</td><td>${stBadge(t.status)}</td></tr>`).join("");
+renderChat(chat);
+</script>
+</body>
+</html>
