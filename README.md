@@ -155,7 +155,7 @@ Respons JSON:
 {
   "status": "success",
   "tickets": [
-    { "id": 12, "title": "Email tidak bisa login", "severity": "High", "status": "Open", "agent": "Iman" }
+    { "id": 12, "title": "Email tidak bisa login", "severity": "High", "status": "Open", "agent": "Fikri" }
   ]
 }
 ```
@@ -189,7 +189,7 @@ tavrena/
 |---|---|---|
 | Project Manager | Muhammad Afatyo Ikhsan | Jadwal, koordinasi tim, review, dokumen deskripsi proyek |
 | UI/UX Designer | Devani Arlenia | Wireframe, mockup desktop dan mobile, design system |
-| Frontend Developer | Iman Abadi | HTML, CSS, Bootstrap, JavaScript, integrasi AJAX |
+| Frontend Developer | Fikri Nabhan | HTML, CSS, Bootstrap, JavaScript, integrasi AJAX |
 | Backend Developer | Zalfa Aisyah Putri | Database, REST API Python (Flask), auth, konfirmasi email |
 | System Analyst | Said Anwari | Analisis kebutuhan, flowchart, ERD, dokumentasi AJAX/JSON, pengujian |
 
